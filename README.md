@@ -1,6 +1,6 @@
 # Principles of Health Promotion, IEC and BCC
 
-A 60-minute session for first MBBS students at AIIMS Bhopal. Students watch real campaigns on tobacco and sanitation, from 1949 to today, ask the same six questions of each, and find the principles of health communication themselves. The session ends by naming them: nine principles of effective health communication, IEC, BCC and SBCC, and the five action areas of the Ottawa Charter.
+A session for first MBBS students at AIIMS Bhopal on the principles of health promotion and health communication. The session is built on real campaigns on tobacco and sanitation, from a 1949 cigarette advertisement to recent Indian campaigns. Students analyse each campaign with six questions and work out the principles themselves. The session ends with the nine principles of effective health communication, IEC, BCC and SBCC, and the five action areas of the Ottawa Charter.
 
 Live site: https://drpakhare.github.io/health-promotion-iec-bcc/
 
@@ -15,27 +15,12 @@ By the end of the session, students will be able to:
 5. Distinguish IEC, BCC and SBCC.
 6. Define health promotion and name the five action areas of the Ottawa Charter, with an Indian example of each.
 
-## Run sheet (60 minutes)
+## Contents
 
-| Minutes | Slides | Content |
-|---|---|---|
-| 0 to 5 | 1 to 3 | Hook: two cigarette packs. The six questions. |
-| 5 to 20 | 4 to 11 | Tobacco thread: Camel 1949, Sunita, Mukesh, the COTPA timeline, GATS. |
-| 20 to 37 | 12 to 18 | Sanitation thread: Poo2Loo, Darwaza Band, r.i.c.e. data, Jujhar village and CLTS. |
-| (37 to 41) | 19 | Optional: family planning and entertainment-education. Skip if behind. |
-| 38 to 60 | 20 to 24 | Students call out principles; nine principles; IEC, BCC, SBCC; Ottawa Charter; back to the packs. |
+- `index.html`: landing page.
+- `slides/health-promotion-iec-bcc.html`: the slide deck.
+- `assets/`: styles and images.
+- `media/`: placeholder for local copies of the video clips (not published).
+- `STYLE.md`: house style, shared with the Epidemiological Thinking lecture series.
 
-## Before class
-
-- Preview every clip. Play only the first 60 to 90 seconds of the longer ones (Poo2Loo, Jujhar).
-- For offline teaching, download the clips into `media/` (names in `media/README.md`). The slides play local files first and fall back to YouTube.
-- Press S in the slides for speaker notes, which include the minute marks.
-
-## Files
-
-- `slides/health-promotion-iec-bcc.html`: the deck (reveal.js, 1280 by 720).
-- `assets/`: house styles and clip poster frames.
-- `src/chk.mjs`: deck checker (overflow, text size, notes, em dashes). `src/bundle.py`: single-file copies for offline sharing.
-- House style: see `STYLE.md`. Same style as the Epidemiological Thinking series.
-
-Prepared at AIIMS Bhopal with Claude (Anthropic) as drafting and coding assistant. Clips belong to their makers and are embedded from YouTube for teaching.
+Prepared at AIIMS Bhopal with Claude (Anthropic) as drafting and coding assistant. Video clips belong to their makers and are embedded from YouTube for teaching.

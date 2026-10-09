@@ -44,6 +44,22 @@
   .stats2 { display: flex; gap: 56px; align-items: flex-start; margin-top: 20px; }
   .stats2 .stat { margin: 0; flex: 1; }
   .stats2 .stat .n { font-size: 56px; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; }
+  .pair figure, .trio figure, .withimg figure { margin: 0; text-align: center; }
+  .pair img { height: 430px; width: auto; max-width: 100%; display: block; margin: 0 auto; box-shadow: 0 2px 10px rgba(0,0,0,.18); }
+  .reveal figcaption { font-size: var(--fs-small); color: var(--dim); margin-top: 10px; line-height: 1.3; }
+  .reveal figcaption b { color: var(--band); }
+  .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; align-items: end; }
+  .trio img, .trio .textwarn { height: 330px; width: auto; max-width: 100%; display: block; margin: 0 auto; }
+  .textwarn { display: flex !important; align-items: center; justify-content: center; width: 330px !important; background: #f6efe0; border: 2px solid #c9a96a; }
+  .textwarn span { font-size: 19px; letter-spacing: .04em; color: #5a4a2a; text-transform: uppercase; }
+  .withimg { display: grid; grid-template-columns: 1fr 380px; gap: 36px; align-items: start; }
+  .withimg.wide { grid-template-columns: 1fr 560px; }
+  .withimg img { width: 100%; height: auto; display: block; box-shadow: 0 2px 10px rgba(0,0,0,.18); }
+  .withimg .cards.c2 { grid-template-columns: 1fr 1fr; }
+  .withimg .cards.c1 { grid-template-columns: 1fr; }
+  .probe img.side { width: 300px; display: block; margin-bottom: 12px; }
+  .logo { height: 70px; width: auto; vertical-align: middle; margin-right: 18px; }
   .lvl { font-family: var(--font-head); font-weight: 600; color: var(--band); white-space: nowrap; }
 </style>
 </head>
@@ -53,7 +69,7 @@
 <!-- 1 -->
 <section class="cover">
   <p class="kicker">Health Communication · First MBBS</p>
-  <h1>Two cigarette packs, forty years apart. Which one is health promotion?</h1>
+  <h1>Two cigarette messages, decades apart. Which one is health promotion?</h1>
   <p class="lede dim">Principles of health promotion, IEC and BCC, found in real campaigns from 1949 to today</p>
   <p class="small faint">AIIMS Bhopal · 60 minutes</p>
   <aside class="notes">Minute 0. Today I will not give you a list of principles at the start. You will find them yourselves. We will watch real campaigns, some from India and one from America in 1949, and after each one I will ask you a few questions. The principles of health promotion will come out of your answers. At the end we will put them together and give them their textbook names. We start with a question you cannot answer yet. Keep it in mind for the hour.</aside>
@@ -61,28 +77,13 @@
 
 <!-- 2 -->
 <section>
-  <h2>Look at both packs. Which one is health promotion?</h2>
-  <svg class="dg" viewBox="0 0 1152 470" role="img" aria-label="Schematic of two cigarette packs. Left, 1975 to 2008: a small text warning on the side. Right, from 2016: a graphic image and warning covering 85 percent of both faces, with a quitline number.">
-    <rect x="120" y="20" width="300" height="400" rx="8" fill="#c9a96a" stroke="#7a6136" stroke-width="3"/>
-    <rect x="150" y="60" width="240" height="150" rx="6" fill="#f6efe0"/>
-    <text class="tb" x="270" y="125" text-anchor="middle">BRAND NAME</text>
-    <text class="td" x="270" y="160" text-anchor="middle">king size filter</text>
-    <rect x="150" y="360" width="240" height="40" fill="#f6efe0" stroke="#7a6136"/>
-    <text x="270" y="386" text-anchor="middle" style="font-size:19px" fill="#5a4a2a">Injurious to health</text>
-    <text class="tbn" x="270" y="455" text-anchor="middle">1975 to 2008</text>
-    <rect x="732" y="20" width="300" height="400" rx="8" fill="#c9a96a" stroke="#7a6136" stroke-width="3"/>
-    <rect x="732" y="20" width="300" height="340" rx="8" fill="#1d2433"/>
-    <rect x="762" y="44" width="240" height="190" fill="#5a2a2a"/>
-    <text class="twn" x="882" y="132" text-anchor="middle">graphic image</text>
-    <text class="twn" x="882" y="158" text-anchor="middle">of disease</text>
-    <text class="tw" x="882" y="274" text-anchor="middle">TOBACCO CAUSES</text>
-    <text class="tw" x="882" y="302" text-anchor="middle">PAINFUL DEATH</text>
-    <text class="twn" x="882" y="338" text-anchor="middle">Quit today 1800-11-2356</text>
-    <text x="882" y="395" text-anchor="middle" style="font-size:19px" fill="#3b2f18">brand</text>
-    <text class="tbn" x="882" y="455" text-anchor="middle">From 2016 (quitline from 2018)</text>
-  </svg>
-  <p class="cite">Schematic, drawn for teaching. Warning sizes as required by Indian rules: Cigarettes Act 1975; COTPA packaging rules 2008, amended 2014 and 2018.</p>
-  <aside class="notes">Minute 1. Two packs. On the left, the kind sold in India for over thirty years: a small line, cigarette smoking is injurious to health. On the right, a pack today: 85 percent of the front and back covered by a picture of disease, a blunt warning and, since 2018, a free quitline number. Ask for a quick show of hands. Who thinks the left one is health promotion? The right one? Both? Neither? Do not resolve it. Say: by the end of the hour you will be able to defend your answer.</aside>
+  <h2>Look at both. Which one is health promotion?</h2>
+  <div class="pair">
+    <figure><img src="../assets/img/charminar_ad.jpg" alt="Charminar cigarette magazine advertisement: a couple on a motorcycle, with the line Give me a bike, give me a highway, give me my girl. A one-line statutory warning in small print at the bottom."><figcaption><b>Before 2003.</b> A cigarette advertisement. Find the warning.</figcaption></figure>
+    <figure><img src="../assets/img/warning_2018.jpg" alt="Indian pictorial health warning from 2018: a photograph of oral cancer with the Hindi text Tobacco causes a painful death, quit today, call 1800-11-2356."><figcaption><b>From 2018.</b> The warning on every pack, 85% of both faces.</figcaption></figure>
+  </div>
+  <p class="cite">Left: Charminar advertisement, Vazir Sultan Tobacco, Indian magazine, before the 2003 ban on tobacco advertising. Right: Ministry of Health and Family Welfare, specified health warning, 2018.</p>
+  <aside class="notes">Minute 1. Two messages about cigarettes. On the left, a magazine advertisement for Charminar, from the years when cigarette ads were legal in India. Ask students to find the warning. It is the one line of tiny print at the bottom left: statutory warning, cigarette smoking is injurious to health. That was all the law required from 1975. On the right, the warning that has been printed on every pack since 2018: a photograph of oral cancer, "tobacco causes a painful death", and a free quitline number, covering 85 percent of the front and back. Ask for a quick show of hands. Who thinks the left one is health promotion? The right one? Both? Neither? Do not resolve it. Say: by the end of the hour you will be able to defend your answer. Also ask what the left advertisement is really selling. Not tobacco: a bike, a highway, a girl. Freedom and romance. We will come back to that.</aside>
 </section>
 
 <!-- 3 -->
@@ -109,7 +110,7 @@
     </div>
     <div class="probe">
       <p class="tag">Tobacco · Clip 1</p>
-      <h3>Ask the room</h3>
+      <h3>Think about</h3>
       <ol>
         <li>Who is speaking, and why that person?</li>
         <li>What is the one message?</li>
@@ -123,6 +124,8 @@
 <!-- 5 -->
 <section>
   <h2>The tobacco industry used every principle first</h2>
+  <div class="withimg">
+  <div>
   <div class="cards c2">
     <div class="card"><h3>A credible source</h3><p class="small">A doctor in a white coat. The audience trusts the messenger before the message.</p></div>
     <div class="card"><h3>One simple message</h3><p class="small">"More doctors smoke Camels." Seven words, repeated everywhere.</p></div>
@@ -130,8 +133,11 @@
     <div class="card"><h3>Repetition</h3><p class="small">Radio, magazines, television, for years.</p></div>
   </div>
   <p class="claim warn">Communication is a tool. It sold cigarettes long before it was used to stop them.</p>
+  </div>
+  <figure><img src="../assets/img/camel_print.jpg" alt="1940s Camel magazine advertisement: a smiling doctor with a cigarette, headline More doctors smoke Camels than any other cigarette."></figure>
+  </div>
   <p class="cite">Gardner MN, Brandt AM. "The doctors' choice is America's choice": the physician in US cigarette advertisements, 1930 to 1953. Am J Public Health 2006;96:222-32.</p>
-  <aside class="notes">Minute 7. Name what they found. Credible source, a single clear message, a defined audience, repetition across channels. These are exactly the principles of health communication you will meet in your textbook. The tobacco industry used them decades before public health did. Historians found the company paid researchers to survey doctors, often after giving them free cartons, so the claim was technically true. The lesson for you, as future doctors: your white coat is a powerful message. People will believe what you say and copy what you do.</aside>
+  <aside class="notes">Minute 7. Name what they found. Credible source, a single clear message, a defined audience, repetition across channels. These are exactly the principles of health communication you will meet in your textbook. The tobacco industry used them decades before public health did. Historians found the company paid researchers to survey doctors, often after giving them free cartons, so the claim was technically true. The lesson for you, as future doctors: your white coat is a powerful message. People will believe what you say and copy what you do. Point back to the Charminar ad from the start: the same tools, selling a feeling of freedom instead of trust.</aside>
 </section>
 
 <!-- 6 -->
@@ -144,7 +150,7 @@
     </div>
     <div class="probe">
       <p class="tag">Tobacco · Clip 2</p>
-      <h3>Ask the room</h3>
+      <h3>Think about</h3>
       <ol>
         <li>Why do you believe her?</li>
         <li>What feeling does it use?</li>
@@ -173,9 +179,9 @@
   <h2>Mukesh ran before every film for six years. Why was he retired?</h2>
   <p class="lede">From 2012, every cinema and TV channel in India had to show anti-tobacco spots before films. One of them was Mukesh, a young man who died of oral cancer from chewing tobacco. In 2018 the Censor Board replaced it.</p>
   <p class="q" style="font-size:36px">If it worked, why stop it?</p>
-  <p class="small dim">Optional clip: <a href="https://www.youtube.com/watch?v=lMiz7sSNqP8" target="_blank" rel="noopener" style="color:var(--band)">Mukesh testimonial, Vital Strategies</a></p>
+  <p class="small dim">Watch Mukesh's story: <a href="https://www.youtube.com/watch?v=lMiz7sSNqP8" target="_blank" rel="noopener" style="color:var(--band)">Mukesh testimonial, Vital Strategies</a></p>
   <p class="cite">Ministry of Health, COTPA film and TV rules, 2012. exchange4media, 2018: CBFC pulls down anti-smoking in-theatre ad after six years.</p>
-  <aside class="notes">Minute 13. Most students will have seen this ad many times; some can recite it. Ask them to. That is the point: everyone saw it, by law, before every film. Then ask why it was replaced. Answers to draw out: people stop noticing a message they have seen a hundred times. This is called wear-out. Jokes and parodies of the ad spread, which can weaken it. Campaigns need refreshing: new faces, new stories, same core message. Also notice the mechanism: this ad reached everyone because a law required it. Communication carried by policy.</aside>
+  <aside class="notes">Minute 13. Most students will have seen this ad many times; some can recite it. Ask them to. If time allows, play the Mukesh testimonial linked on the slide. That is the point: everyone saw it, by law, before every film. Then ask why it was replaced. Answers to draw out: people stop noticing a message they have seen a hundred times. This is called wear-out. Jokes and parodies of the ad spread, which can weaken it. Campaigns need refreshing: new faces, new stories, same core message. Also notice the mechanism: this ad reached everyone because a law required it. Communication carried by policy.</aside>
 </section>
 
 <!-- 9 -->
@@ -202,6 +208,19 @@
   </svg>
   <p class="cite">Cigarettes Act 1975; Cigarettes and Other Tobacco Products Act (COTPA) 2003 and its rules; Prohibition of Electronic Cigarettes Act 2019.</p>
   <aside class="notes">Minute 15. Walk along the line. In 1975, a single sentence on the side of the pack. In 2003, COTPA bans tobacco advertising, so the industry loses its most powerful channel, the one we saw in 1949. In 2008, smoking banned in public places. In 2009, pictures on packs. In 2012, ads before every film. In 2016, 85 percent of both faces. In 2018, a quitline number on every pack. Ask: which of these is communication, and which is law? Students will realise most are both. The pack warning is a law that forces a message into the smoker's hand twenty times a day.</aside>
+</section>
+
+<!-- 10 -->
+<!-- 9b -->
+<section>
+  <h2>Three warnings, three eras. Which would make you stop?</h2>
+  <div class="trio">
+    <figure><div class="textwarn"><span>Cigarette smoking is injurious to health</span></div><figcaption><b>1975.</b> One line of text</figcaption></figure>
+    <figure><img src="../assets/img/warning_2009.jpg" alt="India's first pictorial health warning, 2009: a black scorpion with the words Tobacco kills, Tobacco causes cancer."><figcaption><b>2009.</b> The first picture: a scorpion</figcaption></figure>
+    <figure><img src="../assets/img/warning_2018.jpg" alt="Indian pictorial health warning from 2018 showing oral cancer and the quitline number."><figcaption><b>2018.</b> Real disease, plain words, a quitline</figcaption></figure>
+  </div>
+  <p class="cite">Cigarettes Act 1975. COTPA (Packaging and Labelling) Rules 2008, in force 31 May 2009; amended 2014 (85%, from 2016) and 2018.</p>
+  <aside class="notes">Ask: which one would make you stop, and why? Most will pick the right one. Then ask about the middle one. A scorpion: what does it mean? Danger, perhaps, but what does a scorpion have to do with smoking? It does not show the disease, it does not say what to do, and many people did not connect it with tobacco at all. Stronger images were proposed at first and were watered down before the 2009 rules came in, after objections from the industry and some ministers. Evaluations found it weak, and it was replaced. Use the six questions on it. The 2018 warning shows real disease, in plain Hindi, and gives a way out: the quitline. That is threat plus efficacy, from earlier in the hour.</aside>
 </section>
 
 <!-- 10 -->
@@ -235,11 +254,11 @@
   <div class="split">
     <div>
       <div class="clip" data-yt="l01AMCBG0Wk" data-local="../media/poo2loo.mp4"><img src="../assets/img/poo2loo.jpg" alt="Still from the Poo2Loo music video"><button class="play" type="button">▶ Play clip</button></div>
-      <p class="meta">"Take Poo to the Loo", UNICEF India, 2014. Play the first 60 to 90 seconds. <a href="https://www.youtube.com/watch?v=l01AMCBG0Wk" target="_blank" rel="noopener">Open on YouTube</a></p>
+      <p class="meta">"Take Poo to the Loo", UNICEF India, 2014. <a href="https://www.youtube.com/watch?v=l01AMCBG0Wk" target="_blank" rel="noopener">Open on YouTube</a></p>
     </div>
     <div class="probe">
       <p class="tag">Sanitation · Clip 3</p>
-      <h3>Ask the room</h3>
+      <h3>Think about</h3>
       <ol>
         <li>Who is it for?</li>
         <li>What feeling does it use?</li>
@@ -273,7 +292,7 @@
     </div>
     <div class="probe">
       <p class="tag">Sanitation · Clip 4</p>
-      <h3>Ask the room</h3>
+      <h3>Think about</h3>
       <ol>
         <li>Who is it for?</li>
         <li>What feeling does it use?</li>
@@ -288,13 +307,14 @@
 <!-- 15 -->
 <section>
   <h2>Toilets built are not toilets used</h2>
+  <p class="lede"><img class="logo" src="../assets/img/sbm_logo.png" alt="Swachh Bharat Mission logo">Swachh Bharat Mission, from 2014: over 10 crore toilets built.</p>
   <div class="stats2">
     <div class="stat"><span class="n">70% → 44%</span><span class="l">people defecating in the open, rural Bihar, MP, Rajasthan and UP, 2014 to 2018</span></div>
     <div class="stat"><span class="n">23%</span><span class="l">of people who had a toilet still defecated in the open in 2018</span></div>
   </div>
   <p class="lede" style="margin-top:30px">Nationally, about 1 in 5 households still used no toilet facility in 2019-21 (NFHS-5).</p>
   <p class="claim">Hardware is necessary but not sufficient. Behaviour has to change too, and stay changed.</p>
-  <p class="cite">Gupta A, et al. Changes in open defecation in rural north India: 2014-2018. r.i.c.e. working paper, 2019. NFHS-5 (2019-21), as reported by Deccan Herald, 2022.</p>
+  <p class="cite">Gupta A, et al. Changes in open defecation in rural north India: 2014-2018. r.i.c.e. working paper, 2019. NFHS-5 (2019-21), as reported by Deccan Herald, 2022. Toilets built: Ministry of Jal Shakti, PIB, 2019.</p>
   <aside class="notes">Minute 28. Real data from a large independent survey in four north Indian states, including our own Madhya Pradesh. Open defecation fell a lot, from 70 to 44 percent of people, in four years: a genuine achievement. But nearly a quarter of people who had a toilet still did not use it. Ask: what would explain that? Shallow pits that people fear will fill, no water, toilets used as storerooms, habit, men in particular preferring the field. The lesson: building toilets is supply. Using them is behaviour. You need both.</aside>
 </section>
 
@@ -304,11 +324,11 @@
   <div class="split">
     <div>
       <div class="clip" data-yt="u0yWgjMvZNo" data-local="../media/jujhar.mp4"><img src="../assets/img/jujhar.jpg" alt="Still from the WaterAid India film on Jujhar village, showing a hand-drawn village sanitation map"><button class="play" type="button">▶ Play clip</button></div>
-      <p class="meta">"How Jujhar village became open defecation free", WaterAid India. Play about 90 seconds. <a href="https://www.youtube.com/watch?v=u0yWgjMvZNo" target="_blank" rel="noopener">Open on YouTube</a></p>
+      <p class="meta">"How Jujhar village became open defecation free", WaterAid India. <a href="https://www.youtube.com/watch?v=u0yWgjMvZNo" target="_blank" rel="noopener">Open on YouTube</a></p>
     </div>
     <div class="probe">
       <p class="tag">Sanitation · Clip 5</p>
-      <h3>Ask the room</h3>
+      <h3>Think about</h3>
       <ol>
         <li>Who is talking: officials or villagers?</li>
         <li>What is the map for?</li>
@@ -323,9 +343,12 @@
 <!-- 17 -->
 <section>
   <h2>When the community owns the problem, it owns the solution</h2>
-  <div class="cards c2">
+  <div class="withimg wide">
+  <div class="cards c1">
     <div class="card"><h3>Community-led total sanitation</h3><p class="small">Facilitators do not lecture or hand out toilets. Villagers map their own village, walk to the open defecation sites, and calculate how much faeces they produce. Disgust and self-respect, not subsidy, trigger the decision.</p></div>
     <div class="card"><h3>What it adds</h3><p class="small">Two-way communication. Local leaders and women as messengers. A collective decision, so the norm changes for everyone at once. Follow-up visits after the trigger.</p></div>
+  </div>
+  <figure><img src="../assets/img/clts_mapping.jpg" alt="Villagers standing around a large map of their village drawn on the ground with white powder, marking houses and open defecation sites."><figcaption>Villagers map their own village on the ground.</figcaption></figure>
   </div>
   <p class="claim good">From people as targets of messages to people as actors in their own change.</p>
   <p class="cite">Kar K, Chambers R. Handbook on Community-Led Total Sanitation. Plan UK and Institute of Development Studies, 2008.</p>
@@ -346,18 +369,19 @@
 
 <!-- 19 -->
 <section>
-  <h2>Optional: from "Hum do, hamare do" to a doctor in a TV serial</h2>
+  <h2>From "Hum do, hamare do" to a doctor in a TV serial</h2>
   <div class="split">
     <div>
       <div class="clip" data-yt="_rIEYMnCtjw" data-local="../media/mkbksh.mp4"><img src="../assets/img/mkbksh.jpg" alt="Still from the promo of the TV serial Main Kuch Bhi Kar Sakti Hoon"><button class="play" type="button">▶ Play clip</button></div>
       <p class="meta">"Main Kuch Bhi Kar Sakti Hoon", Population Foundation of India, Doordarshan, from 2014. <a href="https://www.youtube.com/watch?v=_rIEYMnCtjw" target="_blank" rel="noopener">Open on YouTube</a></p>
     </div>
     <div class="probe">
-      <p class="tag">Family planning · If time</p>
-      <h3>Ask the room</h3>
+      <p class="tag">Family planning</p>
+      <img class="side" src="../assets/img/red_triangle.jpg" alt="Family planning red triangle beside a drawing of a family of four">
+      <h3>Think about</h3>
       <ol>
-        <li>1960s: a red triangle and a four-word slogan. Why so simple?</li>
-        <li>2014: a weekly drama. Why a story?</li>
+        <li>The red triangle and a four-word slogan. Why so simple?</li>
+        <li>A weekly TV drama. Why a story?</li>
       </ol>
     </div>
   </div>
@@ -406,7 +430,7 @@
 <section>
   <h2>Health promotion is bigger than communication</h2>
   <p class="lede">"The process of enabling people to increase control over, and to improve, their health." Ottawa Charter, 1986</p>
-  <table class="wide">
+  <div class="withimg"><table class="wide">
     <tr><th>Five action areas</th><th>Today's example</th></tr>
     <tr><td>Build healthy public policy</td><td>COTPA, 85% pack warnings, tobacco taxes</td></tr>
     <tr><td>Create supportive environments</td><td>Smoke-free public places, a toilet with water in every home</td></tr>
@@ -414,19 +438,20 @@
     <tr><td>Develop personal skills</td><td>Knowing how to quit; using and maintaining a toilet</td></tr>
     <tr><td>Reorient health services</td><td>Tobacco cessation centres, quitline, ASHAs counselling</td></tr>
   </table>
+  <figure><img src="../assets/img/ottawa_logo.jpg" alt="Ottawa Charter health promotion logo: a circle with three wings labelled with the five action areas and the strategies enable, mediate, advocate." style="box-shadow:none"></figure></div>
   <p class="cite">World Health Organization. Ottawa Charter for Health Promotion. First International Conference on Health Promotion, Ottawa, 1986.</p>
   <aside class="notes">Minute 52. Health promotion is the umbrella. The Ottawa Charter of 1986 defined it as enabling people to increase control over their health, and set out five action areas. Map each one to today. Notice that communication, IEC and BCC, sits mainly in developing personal skills, with some support for the others. Most of what made the real difference today, the laws, the smoke-free places, the toilets and the community decision, lies in the other four. The Charter also names three strategies you will see in exams: advocate, enable, mediate.</aside>
 </section>
 
 <!-- 24 -->
 <section>
-  <h2>So, which pack is health promotion?</h2>
-  <div class="cards c2">
-    <div class="card"><h3>1975</h3><p class="small">A message, in small print, that the user may never read. Information.</p></div>
-    <div class="card good"><h3>2016 onwards</h3><p class="small">A message made compulsory by law, at the point of use, every time, with a way out printed on it: the quitline.</p></div>
+  <h2>So, which one is health promotion?</h2>
+  <div class="cards c2" style="align-items:stretch">
+    <div class="card"><img src="../assets/img/charminar_ad.jpg" alt="" style="height:230px;float:right;margin:0 0 6px 14px"><h3>Before 2003</h3><p class="small">One line of small print, under an advertisement selling freedom and romance. Information, easy to miss.</p></div>
+    <div class="card good"><img src="../assets/img/warning_2018.jpg" alt="" style="height:230px;float:right;margin:0 0 6px 14px"><h3>From 2018</h3><p class="small">A message made compulsory by law, at the point of use, every time, with a way out printed on it: the quitline.</p></div>
   </div>
-  <p class="claim good">Both packs communicate. Only the second is health promotion: policy, environment, emotion and efficacy, in the smoker's hand.</p>
-  <aside class="notes">Minute 56. Return to the opening question. Both packs carry a message. The first is information, easy to ignore. The second combines a law, a change in the environment at the point of use, a strong emotional message, and a way out in the quitline number. That is health promotion in one object. Ask for one sentence from a student summarising the session. If time allows, set a small task: before the next class, find one health poster or ad on campus or in your hometown and judge it using the six questions.</aside>
+  <p class="claim good" style="margin-top:28px">Both communicate. Only the second is health promotion: policy, environment, emotion and efficacy, in the smoker's hand.</p>
+  <aside class="notes">Minute 56. Return to the opening question. Both carry a message. The first is a line of information under an advertisement, easy to ignore. The second combines a law, a change in the environment at the point of use, a strong emotional message, and a way out in the quitline number. That is health promotion in one object. Ask for one sentence from a student summarising the session. If time allows, set a small task: before the next class, find one health poster or ad on campus or in your hometown and judge it using the six questions.</aside>
 </section>
 
 <!-- 25 -->
@@ -442,6 +467,7 @@
     <li>Gupta A, et al. Changes in open defecation in rural north India: 2014-2018. r.i.c.e., 2019.</li>
     <li>NFHS-5 (2019-21). 19% of households do not use any toilet facility. Deccan Herald, 2022.</li>
     <li>Kar K, Chambers R. Handbook on Community-Led Total Sanitation. Plan UK and IDS, 2008.</li>
+    <li>Images: Charminar advertisement (Vazir Sultan Tobacco); Camel advertisement (R.J. Reynolds, 1940s); MoHFW specified health warnings 2009 and 2018; Swachh Bharat Mission logo; CLTS mapping photograph; family planning red triangle; WHO Ottawa Charter logo.</li>
     <li>Clips: Camel (1949); Vital Strategies, Sunita and Mukesh; UNICEF India, Poo2Loo (2014); Swachh Bharat Mission (Grameen), Darwaza Band; WaterAid India, Jujhar village; Population Foundation of India, Main Kuch Bhi Kar Sakti Hoon. All on YouTube; links on each slide.</li>
   </ol>
   <p class="small faint">Prepared at AIIMS Bhopal with Claude (Anthropic) as drafting and coding assistant.</p>
