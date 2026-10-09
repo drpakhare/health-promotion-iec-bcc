@@ -1,0 +1,7 @@
+{
+  "name": "health-promotion-iec-bcc",
+  "private": true,
+  "type": "module",
+  "scripts": { "check": "node src/chk.mjs" },
+  "devDependencies": { "playwright-core": "^1.50.0" }
+}
